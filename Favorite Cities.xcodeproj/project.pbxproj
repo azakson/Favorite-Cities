@@ -16,6 +16,7 @@
 		58EB437F23C8DC44001BD36F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58EB437D23C8DC44001BD36F /* LaunchScreen.storyboard */; };
 		58EB438A23C8DC44001BD36F /* Favorite_CitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EB438923C8DC44001BD36F /* Favorite_CitiesTests.swift */; };
 		58EB439523C8DC45001BD36F /* Favorite_CitiesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EB439423C8DC45001BD36F /* Favorite_CitiesUITests.swift */; };
+		58EB43A323C8DF58001BD36F /* city.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EB43A223C8DF58001BD36F /* city.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		58EB439023C8DC45001BD36F /* Favorite CitiesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Favorite CitiesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58EB439423C8DC45001BD36F /* Favorite_CitiesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite_CitiesUITests.swift; sourceTree = "<group>"; };
 		58EB439623C8DC45001BD36F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58EB43A223C8DF58001BD36F /* city.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = city.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				58EB437423C8DC41001BD36F /* MasterViewController.swift */,
 				58EB437623C8DC41001BD36F /* DetailViewController.swift */,
 				58EB437823C8DC42001BD36F /* Main.storyboard */,
+				58EB43A223C8DF58001BD36F /* city.swift */,
 				58EB437B23C8DC44001BD36F /* Assets.xcassets */,
 				58EB437D23C8DC44001BD36F /* LaunchScreen.storyboard */,
 				58EB438023C8DC44001BD36F /* Info.plist */,
@@ -264,6 +267,7 @@
 			files = (
 				58EB437123C8DC41001BD36F /* AppDelegate.swift in Sources */,
 				58EB437323C8DC41001BD36F /* SceneDelegate.swift in Sources */,
+				58EB43A323C8DF58001BD36F /* city.swift in Sources */,
 				58EB437523C8DC41001BD36F /* MasterViewController.swift in Sources */,
 				58EB437723C8DC41001BD36F /* DetailViewController.swift in Sources */,
 			);
