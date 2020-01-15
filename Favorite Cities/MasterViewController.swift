@@ -12,7 +12,7 @@ class MasterViewController: UITableViewController {
     
     var detailViewController: DetailViewController? = nil
     var cities = [city]()
-    
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +25,18 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        if let savedData = defaults.object(forKey: "data") as? Data {
+            if let decoded = try? JSONDecoder().decode([city].self, from: savedData) {
+                cities = decoded
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
         tableView.reloadData()
+        saveData()
     }
     
     @objc
@@ -62,12 +68,18 @@ class MasterViewController: UITableViewController {
                                 image: image.pngData()!)
                 self.cities.append(City)
                 self.tableView.reloadData()
+                self.saveData()
             }
         }
         alert.addAction(insertAction)
         present(alert,animated: true, completion: nil)
     }
     
+    func saveData() {
+        if let encoded = try? JSONEncoder().encode(cities) {
+            defaults.set(encoded, forKey: "data")
+        }
+    }
     // MARK: - Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -112,10 +124,12 @@ class MasterViewController: UITableViewController {
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
+        saveData()
     }
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let objectToMove = cities.remove(at: sourceIndexPath.row)
         cities.insert(objectToMove, at: destinationIndexPath.row)
+        saveData()
     }
     
     
